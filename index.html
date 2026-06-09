@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KnowledgeForge Documentation Hub</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="home">
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="KnowledgeForge home">
+      <span class="brand-mark">K</span>
+      <span>
+        <strong>KnowledgeForge</strong>
+        <small>Wiki & Documentation Sites</small>
+      </span>
+    </a>
+
+    <div class="top-search" role="search">
+      <span aria-hidden="true">Search</span>
+      <input id="globalSearch" type="search" placeholder="Find pages, APIs, policies, snippets...">
+      <kbd>Ctrl K</kbd>
+    </div>
+
+    <nav class="topnav" aria-label="Primary">
+      <a href="index.html" class="active">Home</a>
+      <a href="introduction.html">Intro</a>
+      <a href="docs.html">Docs</a>
+      <a href="examples.html">Examples</a>
+    </nav>
+
+    <div class="top-actions">
+      <select id="versionSelect" aria-label="Documentation version">
+        <option value="v4">v4.0 Current</option>
+        <option value="v3">v3.2 Stable</option>
+        <option value="v2">v2.1 Legacy</option>
+      </select>
+      <button id="authButton" type="button">Sign in</button>
+      <button id="themeToggle" type="button">Dark</button>
+      <button id="menuButton" class="menu-button" type="button" aria-label="Open sidebar">Menu</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow">Documentation project showcase</p>
+        <h1>The knowledge home for every team</h1>
+        <p>
+          A documentation website for technical manuals, software references, company
+          guidelines, and searchable knowledge bases.
+        </p>
+        <div class="hero-actions">
+          <a href="docs.html">Explore Documentation</a>
+          <button id="openSearchButton" type="button">Open Quick Find</button>
+          <button id="heroSignupButton" type="button">Create Workspace</button>
+        </div>
+        <div class="hero-stats" aria-label="Project highlights">
+          <span><strong>20+</strong> docs pages</span>
+          <span><strong>4</strong> core features</span>
+          <span><strong>3</strong> versions</span>
+        </div>
+      </div>
+
+      <div class="hero-loop" aria-label="Looping documentation preview">
+        <div class="preview-toolbar">
+          <span></span><span></span><span></span>
+          <strong>workspace preview</strong>
+        </div>
+        <div class="loop-screen">
+          <div class="loop-track">
+            <article>
+              <p class="mini-label">Navigation</p>
+              <h2>Sidebar stays close, then glides open on hover.</h2>
+              <div class="mini-cards">
+                <span>Pages</span>
+                <span>Search</span>
+                <span>Versions</span>
+              </div>
+            </article>
+            <article>
+              <p class="mini-label">Search</p>
+              <h2>Quick find jumps straight to the right page.</h2>
+              <pre><code>Ctrl + K
+Search everything</code></pre>
+            </article>
+            <article>
+              <p class="mini-label">Reading</p>
+              <h2>Code, notes, and references stay in one view.</h2>
+              <pre><code>GET /v4/articles
+Authorization: Bearer token</code></pre>
+            </article>
+            <article aria-hidden="true">
+              <p class="mini-label">Navigation</p>
+              <h2>Sidebar stays close, then glides open on hover.</h2>
+              <div class="mini-cards">
+                <span>Pages</span>
+                <span>Search</span>
+                <span>Versions</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="introduction" id="introduction">
+      <div class="intro-copy">
+        <p class="eyebrow">Introduction</p>
+        <h2>Build knowledge that is organized, searchable, and ready to use.</h2>
+        <p>
+          KnowledgeForge presents the main purpose of wiki and documentation sites:
+          keeping important information in one place so readers can search, browse,
+          copy examples, compare versions, and trust the latest reviewed content.
+        </p>
+      </div>
+      <div class="intro-grid">
+        <article>
+          <span>Product docs</span>
+          <strong>Guides and manuals</strong>
+          <p>Explain product behavior, setup, troubleshooting, and maintenance workflows.</p>
+        </article>
+        <article>
+          <span>Developer portal</span>
+          <strong>APIs and snippets</strong>
+          <p>Document endpoints, authentication, examples, errors, and SDK references.</p>
+        </article>
+        <article>
+          <span>Internal wiki</span>
+          <strong>Policies and decisions</strong>
+          <p>Store team guidelines, onboarding rules, review processes, and ownership notes.</p>
+        </article>
+        <article>
+          <span>Help center</span>
+          <strong>Answers and support</strong>
+          <p>Turn repeated questions into clear articles with related pages and search tags.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <div class="search-panel" id="searchPanel" aria-hidden="true">
+    <div class="search-dialog" role="dialog" aria-modal="true" aria-label="Quick Find">
+      <div class="dialog-head">
+        <strong>Quick Find</strong>
+        <button id="closeSearch" type="button" aria-label="Close search">Close</button>
+      </div>
+      <input id="dialogSearch" type="search" placeholder="Search docs, code, permissions, versions...">
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <div class="auth-panel" id="authPanel" aria-hidden="true">
+    <div class="auth-dialog" role="dialog" aria-modal="true" aria-label="Workspace account">
+      <div class="dialog-head">
+        <strong id="authTitle">Sign in</strong>
+        <button id="closeAuth" type="button" aria-label="Close account dialog">Close</button>
+      </div>
+      <div class="auth-tabs" role="tablist" aria-label="Account mode">
+        <button class="auth-tab active" type="button" data-auth-mode="login">Login</button>
+        <button class="auth-tab" type="button" data-auth-mode="signup">Sign up</button>
+      </div>
+      <form id="authForm" class="auth-form">
+        <label>
+          Name
+          <input id="nameInput" type="text" autocomplete="name" placeholder="Your name">
+        </label>
+        <label>
+          Email
+          <input id="emailInput" type="email" autocomplete="email" placeholder="you@example.com" required>
+        </label>
+        <label>
+          Password
+          <input id="passwordInput" type="password" autocomplete="current-password" placeholder="Minimum 6 characters" required>
+        </label>
+        <button id="authSubmit" type="submit">Login</button>
+        <p id="authMessage" class="auth-message" aria-live="polite"></p>
+      </form>
+      <div class="local-db-note">
+        <strong>Demo database</strong>
+        <p>Accounts are stored in this browser using localStorage so the project works without a backend server.</p>
+      </div>
+    </div>
+  </div>
+
+  <button class="to-top" id="toTop" type="button">Top</button>
+
+  <footer>
+    <strong>KnowledgeForge Documentation Hub</strong>
+    <p>Built as a functional documentation website project with organized pages, global search, code snippets, and version toggles.</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

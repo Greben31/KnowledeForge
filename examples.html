@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KnowledgeForge Examples</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="examples">
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="KnowledgeForge home">
+      <span class="brand-mark">K</span>
+      <span>
+        <strong>KnowledgeForge</strong>
+        <small>Wiki & Documentation Sites</small>
+      </span>
+    </a>
+
+    <div class="top-search" role="search">
+      <span aria-hidden="true">Search</span>
+      <input id="globalSearch" type="search" placeholder="Find pages, APIs, policies, snippets...">
+      <kbd>Ctrl K</kbd>
+    </div>
+
+    <nav class="topnav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="introduction.html">Intro</a>
+      <a href="docs.html">Docs</a>
+      <a href="examples.html" class="active">Examples</a>
+    </nav>
+
+    <div class="top-actions">
+      <select id="versionSelect" aria-label="Documentation version">
+        <option value="v4">v4.0 Current</option>
+        <option value="v3">v3.2 Stable</option>
+        <option value="v2">v2.1 Legacy</option>
+      </select>
+      <button id="authButton" type="button">Sign in</button>
+      <button id="themeToggle" type="button">Dark</button>
+      <button id="menuButton" class="menu-button" type="button" aria-label="Open sidebar">Menu</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="examples" style="border-top:0;align-items:start;">
+      <div>
+        <p class="eyebrow">Examples</p>
+        <h2>Practical page patterns for a complete documentation hub</h2>
+        <p>
+          These examples show how the same site can carry product docs, internal wikis,
+          help center pages, and developer references without feeling messy. Each pattern
+          has a different job, but they all follow the same idea: explain the goal, show
+          the details, help readers confirm success, and connect them to the next page.
+        </p>
+        <p>
+          Use these as content models when you add more real pages to the project. A strong
+          docs site should not only look organized; it should also answer repeated questions,
+          support onboarding, reduce confusion, and make technical decisions easier to find.
+        </p>
+      </div>
+      <div class="example-grid">
+        <article>
+          <strong>API Reference</strong>
+          <span>Endpoints, authentication rules, parameters, examples, errors, and response shapes. This page is best for developers who already know what they need and want exact technical details.</span>
+        </article>
+        <article>
+          <strong>Policy Page</strong>
+          <span>Clear ownership, review date, approval path, scope, exceptions, and enforcement notes. This keeps internal rules understandable instead of hiding them in scattered files.</span>
+        </article>
+        <article>
+          <strong>Getting Started</strong>
+          <span>Fast onboarding with requirements, first steps, screenshots or code snippets, and success criteria. It should help a new reader reach one useful result quickly.</span>
+        </article>
+        <article>
+          <strong>Troubleshooting</strong>
+          <span>Symptoms, likely causes, fixes, verification steps, and escalation notes. A good troubleshooting page helps readers recover without waiting for support.</span>
+        </article>
+        <article>
+          <strong>Release Notes</strong>
+          <span>Version changes, migration notes, affected features, archived behavior, and links to updated documentation. This keeps teams aware of what changed and why it matters.</span>
+        </article>
+        <article>
+          <strong>Team Wiki</strong>
+          <span>Shared decisions, team rituals, conventions, meeting notes, and internal knowledge. This is useful when the organization needs one reliable place for living information.</span>
+        </article>
+        <article>
+          <strong>Integration Guide</strong>
+          <span>Setup requirements, connection steps, environment variables, webhook behavior, and testing instructions. This pattern is useful for tools that connect to repositories, dashboards, or customer systems.</span>
+        </article>
+        <article>
+          <strong>Security Checklist</strong>
+          <span>Access rules, password expectations, token rotation, approval flow, audit notes, and incident response links. It gives teams a repeatable way to confirm that sensitive work is handled correctly.</span>
+        </article>
+        <article>
+          <strong>Knowledge Base Article</strong>
+          <span>A focused answer for common questions with context, examples, related links, and search keywords. This format works well for support teams and readers who need quick guidance.</span>
+        </article>
+        <article>
+          <strong>Migration Guide</strong>
+          <span>Before-and-after behavior, compatibility notes, required changes, rollback guidance, and validation steps. This page helps readers move from an older version without guessing.</span>
+        </article>
+        <article>
+          <strong>Component Library</strong>
+          <span>Reusable UI blocks, usage rules, code snippets, accessibility notes, and examples. This helps product and engineering teams keep interfaces consistent across projects.</span>
+        </article>
+        <article>
+          <strong>Editorial Standard</strong>
+          <span>Voice, formatting rules, naming conventions, screenshot rules, and review expectations. This keeps every article readable even when many people contribute content.</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="example-showcase" aria-label="Detailed examples">
+      <div class="showcase-copy">
+        <p class="eyebrow">Detailed examples</p>
+        <h2>Three complete layouts you can build from</h2>
+        <p>
+          These larger examples show how a documentation hub can support different reader
+          needs. Some readers want a quick answer, some need a step-by-step workflow, and
+          some need exact reference details they can trust during implementation.
+        </p>
+      </div>
+      <div class="showcase-grid">
+        <article>
+          <span>01</span>
+          <h3>Developer onboarding page</h3>
+          <p>
+            Start with the goal of the onboarding path, then list required access, local
+            tools, sample commands, expected output, and common mistakes. End with links
+            to API Reference, Authentication, Snippet Library, and Troubleshooting.
+          </p>
+          <ul>
+            <li>Prerequisites and permissions</li>
+            <li>Setup commands and expected result</li>
+            <li>Next pages for deeper learning</li>
+          </ul>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Internal company guideline</h3>
+          <p>
+            Explain who the policy affects, when it applies, who owns it, and what happens
+            when an exception is needed. Add review dates and a clear approval path so the
+            page stays useful after the first version.
+          </p>
+          <ul>
+            <li>Owner and review schedule</li>
+            <li>Scope, exceptions, and approvals</li>
+            <li>Templates and related decisions</li>
+          </ul>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Customer help center article</h3>
+          <p>
+            Lead with the answer, then add context, screenshots or examples, and recovery
+            steps. Include search keywords and related articles so readers can keep moving
+            if their exact issue is slightly different.
+          </p>
+          <ul>
+            <li>Short answer first</li>
+            <li>Steps, examples, and confirmation</li>
+            <li>Related pages and search terms</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="example-matrix" aria-label="Example comparison">
+      <p class="eyebrow">Planning matrix</p>
+      <h2>Choose the right page type</h2>
+      <div class="matrix-table" role="table" aria-label="Documentation page type comparison">
+        <div role="row">
+          <strong role="columnheader">Page type</strong>
+          <strong role="columnheader">Best for</strong>
+          <strong role="columnheader">Must include</strong>
+        </div>
+        <div role="row">
+          <span role="cell">Guide</span>
+          <span role="cell">Teaching a workflow from start to finish.</span>
+          <span role="cell">Goal, steps, expected result, and next link.</span>
+        </div>
+        <div role="row">
+          <span role="cell">Reference</span>
+          <span role="cell">Stable facts readers need to check quickly.</span>
+          <span role="cell">Definitions, tables, examples, and warnings.</span>
+        </div>
+        <div role="row">
+          <span role="cell">Changelog</span>
+          <span role="cell">Tracking product, policy, or API changes.</span>
+          <span role="cell">Date, version, impact, and migration link.</span>
+        </div>
+        <div role="row">
+          <span role="cell">Knowledge base</span>
+          <span role="cell">Answering repeated support questions.</span>
+          <span role="cell">Answer, context, fix, and related articles.</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="search-panel" id="searchPanel" aria-hidden="true">
+    <div class="search-dialog" role="dialog" aria-modal="true" aria-label="Quick Find">
+      <div class="dialog-head">
+        <strong>Quick Find</strong>
+        <button id="closeSearch" type="button" aria-label="Close search">Close</button>
+      </div>
+      <input id="dialogSearch" type="search" placeholder="Search docs, code, permissions, versions...">
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <div class="auth-panel" id="authPanel" aria-hidden="true">
+    <div class="auth-dialog" role="dialog" aria-modal="true" aria-label="Workspace account">
+      <div class="dialog-head">
+        <strong id="authTitle">Sign in</strong>
+        <button id="closeAuth" type="button" aria-label="Close account dialog">Close</button>
+      </div>
+      <div class="auth-tabs" role="tablist" aria-label="Account mode">
+        <button class="auth-tab active" type="button" data-auth-mode="login">Login</button>
+        <button class="auth-tab" type="button" data-auth-mode="signup">Sign up</button>
+      </div>
+      <form id="authForm" class="auth-form">
+        <label>
+          Name
+          <input id="nameInput" type="text" autocomplete="name" placeholder="Your name">
+        </label>
+        <label>
+          Email
+          <input id="emailInput" type="email" autocomplete="email" placeholder="you@example.com" required>
+        </label>
+        <label>
+          Password
+          <input id="passwordInput" type="password" autocomplete="current-password" placeholder="Minimum 6 characters" required>
+        </label>
+        <button id="authSubmit" type="submit">Login</button>
+        <p id="authMessage" class="auth-message" aria-live="polite"></p>
+      </form>
+      <div class="local-db-note">
+        <strong>Demo database</strong>
+        <p>Accounts are stored in this browser using localStorage so the project works without a backend server.</p>
+      </div>
+    </div>
+  </div>
+
+  <button class="to-top" id="toTop" type="button">Top</button>
+
+  <footer>
+    <strong>KnowledgeForge Documentation Hub</strong>
+    <p>Examples of the kinds of pages this documentation system can support.</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

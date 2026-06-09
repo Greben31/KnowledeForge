@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KnowledgeForge Docs</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="docs">
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="KnowledgeForge home">
+      <span class="brand-mark">K</span>
+      <span>
+        <strong>KnowledgeForge</strong>
+        <small>Wiki & Documentation Sites</small>
+      </span>
+    </a>
+
+    <div class="top-search" role="search">
+      <span aria-hidden="true">Search</span>
+      <input id="globalSearch" type="search" placeholder="Find pages, APIs, policies, snippets...">
+      <kbd>Ctrl K</kbd>
+    </div>
+
+    <nav class="topnav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="introduction.html">Intro</a>
+      <a href="docs.html" class="active">Docs</a>
+      <a href="examples.html">Examples</a>
+      <a href="#recipes-hub">Recipes</a>
+      <a href="#discussions">Discussions</a>
+    </nav>
+
+    <div class="top-actions">
+      <select id="versionSelect" aria-label="Documentation version">
+        <option value="v4">v4.0 Current</option>
+        <option value="v3">v3.2 Stable</option>
+        <option value="v2">v2.1 Legacy</option>
+      </select>
+      <button id="authButton" type="button">Sign in</button>
+      <button id="themeToggle" type="button">Dark</button>
+      <button id="menuButton" class="menu-button" type="button" aria-label="Open sidebar">Menu</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="introduction" style="border-top:0;">
+      <div class="intro-copy">
+        <p class="eyebrow">Documentation workspace</p>
+        <h2>Search pages, read references, and switch versions from one place.</h2>
+        <p>
+          This page is the working center of the project: a browsable docs tree, searchable
+          content, code blocks, version states, and a compact account panel for the demo database.
+          It is arranged for guides, recipes, API reference, changelog updates, and reader
+          discussions so the site feels like a complete documentation product.
+        </p>
+      </div>
+      <div class="intro-grid">
+        <article>
+          <span>Search</span>
+          <strong>Quick find</strong>
+          <p>Jump across page titles, summaries, sections, tags, and code examples.</p>
+        </article>
+        <article>
+          <span>Versions</span>
+          <strong>Current and legacy</strong>
+          <p>Change the content context to match the release a reader actually needs.</p>
+        </article>
+        <article>
+          <span>Sidebar</span>
+          <strong>Hover to open</strong>
+          <p>The navigation panel stays tucked away until you move across the left edge.</p>
+        </article>
+        <article>
+          <span>Account</span>
+          <strong>Local demo login</strong>
+          <p>Sign up or sign in using the browser-stored demo account system.</p>
+        </article>
+      </div>
+    </section>
+
+    <div class="sidebar-reminder" role="note" aria-label="Sidebar reminder">
+      Sidebar is tucked to the left edge. Hover that side to open it.
+    </div>
+
+    <nav class="docs-tabs" aria-label="Documentation modes">
+      <button class="doc-link docs-tab active" type="button" data-doc="welcome"><span>G</span> Guides</button>
+      <button class="doc-link docs-tab" type="button" data-doc="recipes"><span>R</span> Recipes</button>
+      <button class="doc-link docs-tab" type="button" data-doc="apiExplorer"><span>A</span> API Reference</button>
+      <button class="doc-link docs-tab" type="button" data-doc="changelog"><span>C</span> Changelog</button>
+      <button class="doc-link docs-tab" type="button" data-doc="discussions"><span>D</span> Discussions</button>
+      <button class="assistant-open docs-tab" type="button"><span>AI</span> Ask Assistant</button>
+    </nav>
+
+    <section class="recipes-board" id="recipes-hub" aria-label="Recipe navigation">
+      <div class="recipes-header">
+        <div>
+          <p class="eyebrow">Recipes</p>
+          <h2>Step-by-step recipes with live links and working actions.</h2>
+          <p>
+            These recipes are practical paths through common documentation jobs. Each card opens a
+            full topic page, and the featured recipe gives you a deeper walkthrough with code and steps.
+          </p>
+        </div>
+        <a class="recipes-cta" href="docs.html?doc=recipes" target="_blank" rel="noopener">Open Main Recipe</a>
+      </div>
+
+      <div class="recipe-showcase">
+        <aside class="recipe-steps">
+          <span>Featured recipe</span>
+          <h3>Verify Webhook Signature</h3>
+          <p>
+            Use this recipe when you need to confirm that an incoming request was really sent by your
+            documentation system or integration provider. The steps walk through parsing the signature,
+            computing the expected hash, and sending the payload only after the check succeeds.
+          </p>
+          <ol>
+            <li>Parse the signature header.</li>
+            <li>Sign the request body with the shared secret.</li>
+            <li>Compare the computed signature with the header.</li>
+            <li>Continue only if the values match.</li>
+          </ol>
+          <div class="recipe-actions">
+            <a href="docs.html?doc=auth" target="_blank" rel="noopener">Open in New Tab</a>
+            <button type="button" data-doc="auth" class="recipe-open">Open Recipe</button>
+          </div>
+        </aside>
+
+        <div class="recipe-code-panel">
+          <div class="code-head">
+            <span>Node</span>
+            <button class="copy-code" type="button">Copy</button>
+          </div>
+          <pre><code>const expected = crypto
+  .createHmac("sha256", process.env.WEBHOOK_SECRET)
+  .update(`${timestamp}.${JSON.stringify(body)}`)
+  .digest("hex");</code></pre>
+          <div class="code-foot">
+            <code>readme-signature</code>
+            <code>X-Request-Signature</code>
+          </div>
+        </div>
+      </div>
+
+      <div class="recipe-grid">
+        <article>
+          <div class="recipe-preview recipe-preview-code" aria-hidden="true">
+            <span>Component</span>
+            <code>&lt;Callout tone="info"&gt;</code>
+          </div>
+          <strong>Create a Custom Component</strong>
+          <p>Build a reusable container for callouts, banners, or custom doc blocks that appears consistently across articles.</p>
+          <small>Code sample · 3-step tutorial · Purpose: reusable UI</small>
+          <div class="recipe-card-actions">
+            <button type="button" class="recipe-open" data-doc="mdx">Open Recipe</button>
+            <a href="docs.html?doc=mdx" target="_blank" rel="noopener">Open in New Tab</a>
+          </div>
+        </article>
+        <article>
+          <div class="recipe-preview recipe-preview-terminal" aria-hidden="true">
+            <span>Terminal</span>
+            <code>$ node verify-webhook.js</code>
+          </div>
+          <strong>Verify Webhook Signature</strong>
+          <p>Check request authenticity before the data reaches your app or automation workflow.</p>
+          <small>Terminal + code · 4-step tutorial · Purpose: request security</small>
+          <div class="recipe-card-actions">
+            <button type="button" class="recipe-open" data-doc="auth">Open Recipe</button>
+            <a href="docs.html?doc=auth" target="_blank" rel="noopener">Open in New Tab</a>
+          </div>
+        </article>
+        <article>
+          <div class="recipe-preview recipe-preview-code" aria-hidden="true">
+            <span>Workflow</span>
+            <code>on: push → publish OAS</code>
+          </div>
+          <strong>Sync OAS files via GitHub Actions</strong>
+          <p>Publish updated OpenAPI files automatically whenever the repository changes.</p>
+          <small>YAML workflow · 6-step tutorial · Purpose: automatic publishing</small>
+          <div class="recipe-card-actions">
+            <button type="button" class="recipe-open" data-doc="integrations">Open Recipe</button>
+            <a href="docs.html?doc=integrations" target="_blank" rel="noopener">Open in New Tab</a>
+          </div>
+        </article>
+        <article>
+          <div class="recipe-preview recipe-preview-terminal" aria-hidden="true">
+            <span>Terminal</span>
+            <code>$ docs sync ./content</code>
+          </div>
+          <strong>Sync Directory of Files via Code</strong>
+          <p>Move files between your local workspace and your docs hub with repeatable code-based steps.</p>
+          <small>Terminal command · 3-step tutorial · Purpose: content sync</small>
+          <div class="recipe-card-actions">
+            <button type="button" class="recipe-open" data-doc="reusableContent">Open Recipe</button>
+            <a href="docs.html?doc=reusableContent" target="_blank" rel="noopener">Open in New Tab</a>
+          </div>
+        </article>
+        <article>
+          <div class="recipe-preview recipe-preview-code" aria-hidden="true">
+            <span>Pipeline</span>
+            <code>script: publish-openapi</code>
+          </div>
+          <strong>Sync OAS files via Bitbucket Pipelines</strong>
+          <p>Keep API documentation in sync with your repository through an automated pipeline workflow.</p>
+          <small>Pipeline code · 7-step tutorial · Purpose: repository sync</small>
+          <div class="recipe-card-actions">
+            <button type="button" class="recipe-open" data-doc="openapi">Open Recipe</button>
+            <a href="docs.html?doc=openapi" target="_blank" rel="noopener">Open in New Tab</a>
+          </div>
+        </article>
+        <article>
+          <div class="recipe-preview recipe-preview-terminal" aria-hidden="true">
+            <span>Node server</span>
+            <code>$ npm run dashboard</code>
+          </div>
+          <strong>Developer Dashboard Node/Express Configuration</strong>
+          <p>Set up the dashboard experience so contributors can inspect usage, access, and workflow state.</p>
+          <small>Terminal + config · 4-step tutorial · Purpose: dashboard setup</small>
+          <div class="recipe-card-actions">
+            <button type="button" class="recipe-open" data-doc="systemConfig">Open Recipe</button>
+            <a href="docs.html?doc=systemConfig" target="_blank" rel="noopener">Open in New Tab</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="workspace docs-layout" id="workspace">
+      <aside class="sidebar" id="sidebar" aria-label="Documentation navigation">
+        <div class="sidebar-title">
+          <strong>Documentation</strong>
+          <small>Navigation tree</small>
+        </div>
+
+        <div class="nav-section open">
+          <button type="button" class="section-toggle">Getting Started</button>
+          <div class="section-links">
+            <button class="doc-link active" type="button" data-doc="welcome">Welcome</button>
+            <button class="doc-link" type="button" data-doc="quickstart">Quickstart</button>
+            <button class="doc-link" type="button" data-doc="structure">Site Structure</button>
+            <button class="doc-link" type="button" data-doc="recipes">Recipes</button>
+          </div>
+        </div>
+
+        <div class="nav-section open">
+          <button type="button" class="section-toggle">Product Docs</button>
+          <div class="section-links">
+            <button class="doc-link" type="button" data-doc="creatingProject">Creating a Project</button>
+            <button class="doc-link" type="button" data-doc="dashboardProfile">Dashboard and Profile</button>
+            <button class="doc-link" type="button" data-doc="navigateDocs">Navigate Your Docs</button>
+            <button class="doc-link" type="button" data-doc="customDomain">Custom Domain and SSL</button>
+            <button class="doc-link" type="button" data-doc="systemConfig">System Configuration</button>
+            <button class="doc-link" type="button" data-doc="manuals">Technical Manuals</button>
+            <button class="doc-link" type="button" data-doc="knowledge">Knowledge Base</button>
+            <button class="doc-link" type="button" data-doc="guidelines">Company Guidelines</button>
+            <button class="doc-link" type="button" data-doc="publishing">Publishing Flow</button>
+            <button class="doc-link" type="button" data-doc="contentStrategy">Content Strategy</button>
+            <button class="doc-link" type="button" data-doc="changelog">Changelog</button>
+            <button class="doc-link" type="button" data-doc="discussions">Discussions</button>
+          </div>
+        </div>
+
+        <div class="nav-section open">
+          <button type="button" class="section-toggle">Developer Portal</button>
+          <div class="section-links">
+            <button class="doc-link" type="button" data-doc="api">API Reference</button>
+            <button class="doc-link" type="button" data-doc="apiExplorer">API Explorer</button>
+            <button class="doc-link" type="button" data-doc="auth">Authentication</button>
+            <button class="doc-link" type="button" data-doc="snippets">Snippet Library</button>
+            <button class="doc-link" type="button" data-doc="integrations">Integrations</button>
+            <button class="doc-link" type="button" data-doc="openapi">OpenAPI Format</button>
+            <button class="doc-link" type="button" data-doc="mdx">MDX Components</button>
+          </div>
+        </div>
+
+        <div class="nav-section open">
+          <button type="button" class="section-toggle">Platform Features</button>
+          <div class="section-links">
+            <button class="doc-link" type="button" data-doc="globalSearchDoc">Global Search</button>
+            <button class="doc-link" type="button" data-doc="collaboration">Collaboration</button>
+            <button class="doc-link" type="button" data-doc="analytics">Docs Analytics</button>
+            <button class="doc-link" type="button" data-doc="articleDesign">Article Design</button>
+            <button class="doc-link" type="button" data-doc="linter">Docs Linter</button>
+            <button class="doc-link" type="button" data-doc="landingPage">Landing Page</button>
+            <button class="doc-link" type="button" data-doc="customPages">Custom Pages</button>
+            <button class="doc-link" type="button" data-doc="reusableContent">Reusable Content</button>
+          </div>
+        </div>
+
+        <div class="nav-section">
+          <button type="button" class="section-toggle">Governance</button>
+          <div class="section-links">
+            <button class="doc-link" type="button" data-doc="versions">Versioning</button>
+            <button class="doc-link" type="button" data-doc="review">Review Workflow</button>
+            <button class="doc-link" type="button" data-doc="permissions">Permissions</button>
+            <button class="doc-link" type="button" data-doc="searchTips">Search Tips</button>
+            <button class="doc-link" type="button" data-doc="branches">Branches</button>
+          </div>
+        </div>
+      </aside>
+
+      <article class="doc-view" id="docView" tabindex="-1">
+        <button class="return-button" id="returnButton" type="button" aria-label="Return to top">
+          <span aria-hidden="true">&larr;</span> Return
+        </button>
+        <div class="breadcrumbs">
+          <span id="docCategory">Getting Started</span>
+          <span id="docVersion">v4.0 Current</span>
+          <span id="docReadTime">4 min read</span>
+        </div>
+        <h2 id="docTitle">Welcome</h2>
+        <p class="doc-summary" id="docSummary"></p>
+        <div class="doc-tabs" role="tablist" aria-label="Article modes">
+          <button class="tab-button active" type="button" data-mode="guide">Guide</button>
+          <button class="tab-button" type="button" data-mode="reference">Reference</button>
+          <button class="tab-button" type="button" data-mode="changelog">Changelog</button>
+        </div>
+        <div id="docBody"></div>
+      </article>
+
+      <aside class="right-rail" aria-label="Article quick actions">
+        <div class="rail-tools">
+          <button id="copyPageButton" class="copy-page-button" type="button">Copy Page</button>
+          <button id="railMenuButton" class="rail-menu-button" type="button" aria-expanded="false" aria-label="Open page tools">&#8964;</button>
+        </div>
+        <div class="rail-menu" id="railMenu" aria-label="Page tools">
+          <button class="assistant-open" type="button">Ask AI</button>
+          <button id="openChatGptButton" type="button">Open in ChatGPT &#x2197;</button>
+          <button id="openClaudeButton" type="button">Open in Claude &#x2197;</button>
+          <span>MCP</span>
+          <button id="connectCursorButton" type="button">Connect to Cursor</button>
+          <button id="connectVsCodeButton" type="button">Connect to VS Code</button>
+          <button id="copyMcpConfigButton" type="button">Copy MCP Config</button>
+          <button id="copyMcpCommandButton" type="button">Copy MCP Command</button>
+          <button id="viewMarkdownButton" type="button">View as Markdown</button>
+        </div>
+        <div id="railLinks" aria-label="Jump links"></div>
+        <div class="assistant-box">
+          <span>Need a guide?</span>
+          <p>Ask the assistant for API steps, search tips, version help, or a shortcut to the right page.</p>
+        </div>
+        <div class="account-card" id="accountStatus" aria-live="polite">
+          <span>Account</span>
+          <p id="accountStatusText">Sign in to keep the local demo session and take part in discussions, questions, and saved workspace activity on this browser.</p>
+        </div>
+      </aside>
+
+    </section>
+
+    <section class="discussion-board" id="discussions" aria-label="Discussion hub">
+      <div class="discussion-header">
+        <p class="eyebrow">Discussions</p>
+        <div class="discussion-headline">
+          <div>
+            <h2>Discussion threads help the docs stay alive.</h2>
+            <p>
+              This space is where readers ask questions, maintainers answer them, and repeated
+              issues become stronger documentation. It belongs in the navigation because it is part
+              of the support loop, not just a side note.
+            </p>
+          </div>
+          <button id="askQuestionButton" class="ask-question-button" type="button">Ask a Question</button>
+        </div>
+      </div>
+
+      <div class="discussion-feed">
+        <div class="discussion-empty" id="discussionEmpty" hidden>
+          <strong>No questions in this view yet.</strong>
+          <p>Choose another filter or ask a new question to start a discussion.</p>
+        </div>
+        <article class="thread-card answered" data-thread="domain" data-status="answered" data-faq="true">
+          <div class="thread-stats">
+            <button type="button" class="thread-react" aria-label="React to thread">👍 18</button>
+            <button type="button" class="thread-comments-toggle" aria-label="Comments">💬 4</button>
+            <span>Answered</span>
+          </div>
+          <div class="thread-body">
+            <h3><a href="docs.html#customDomain" target="_blank" rel="noopener">What do I need to set up a custom domain?</a></h3>
+            <p>Readers often want the quickest safe path from a local preview URL to a branded documentation address. The answer should mention DNS, SSL, verification, and a final launch check.</p>
+            <small>10 days ago</small>
+            <div class="thread-actions">
+              <button type="button" class="thread-comments-toggle">View comments</button>
+              <button type="button" class="thread-react">React</button>
+              <button type="button" class="thread-reply">Reply</button>
+            </div>
+            <div class="thread-comments" hidden>
+              <p><strong>Anna:</strong> Include the DNS record type and the expected wait time for SSL.</p>
+              <p><strong>James:</strong> The launch checklist should mention redirects and search verification too.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="thread-card" data-thread="project" data-status="open" data-faq="false">
+          <div class="thread-stats">
+            <button type="button" class="thread-react" aria-label="React to thread">👍 11</button>
+            <button type="button" class="thread-comments-toggle" aria-label="Comments">💬 6</button>
+            <span>Open</span>
+          </div>
+          <div class="thread-body">
+            <h3><a href="docs.html#creatingProject" target="_blank" rel="noopener">How should a project start before the docs grow?</a></h3>
+            <p>Good project setup begins with the audience, the first page groups, and a clear home path. A strong answer also points to dashboard, profile, and navigation rules so the workspace feels planned.</p>
+            <small>last week</small>
+            <div class="thread-actions">
+              <button type="button" class="thread-comments-toggle">View comments</button>
+              <button type="button" class="thread-react">React</button>
+              <button type="button" class="thread-reply">Reply</button>
+            </div>
+            <div class="thread-comments" hidden>
+              <p><strong>Leah:</strong> A project is easier to grow when the first pages are chosen before publishing.</p>
+              <p><strong>Mike:</strong> Add ownership and review rules on day one to avoid confusion later.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="thread-card answered" data-thread="navigation" data-status="answered" data-faq="true">
+          <div class="thread-stats">
+            <button type="button" class="thread-react" aria-label="React to thread">👍 24</button>
+            <button type="button" class="thread-comments-toggle" aria-label="Comments">💬 7</button>
+            <span>Answered</span>
+          </div>
+          <div class="thread-body">
+            <h3><a href="docs.html#navigateDocs" target="_blank" rel="noopener">What is the best way to browse long docs?</a></h3>
+            <p>Readers need a reliable way to move through the sidebar, jump links, search, and topic tabs without getting lost. This thread helps turn navigation into a clear reading workflow.</p>
+            <small>2 weeks ago</small>
+            <div class="thread-actions">
+              <button type="button" class="thread-comments-toggle">View comments</button>
+              <button type="button" class="thread-react">React</button>
+              <button type="button" class="thread-reply">Reply</button>
+            </div>
+            <div class="thread-comments" hidden>
+              <p><strong>Rina:</strong> The sidebar hover reminder helps new readers notice the hidden navigation.</p>
+              <p><strong>Omar:</strong> Top tabs and jump links work best when the page is long enough to need both.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="thread-card" data-thread="discussion" data-status="open" data-faq="false">
+          <div class="thread-stats">
+            <button type="button" class="thread-react" aria-label="React to thread">👍 7</button>
+            <button type="button" class="thread-comments-toggle" aria-label="Comments">💬 2</button>
+            <span>Open</span>
+          </div>
+          <div class="thread-body">
+            <h3><a href="docs.html#discussions" target="_blank" rel="noopener">Should docs discussions turn into knowledge base pages?</a></h3>
+            <p>Yes, when the same question keeps coming back. That is how discussions become support articles, troubleshooting guides, or a reusable answer that lives beyond one thread.</p>
+            <small>1 month ago</small>
+            <div class="thread-actions">
+              <button type="button" class="thread-comments-toggle">View comments</button>
+              <button type="button" class="thread-react">React</button>
+              <button type="button" class="thread-reply">Reply</button>
+            </div>
+            <div class="thread-comments" hidden>
+              <p><strong>Tina:</strong> If the question repeats more than twice, it deserves a knowledge base page.</p>
+              <p><strong>Ben:</strong> The accepted answer should link to the permanent guide once it exists.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <aside class="discussion-sidebar">
+        <div class="discussion-panel">
+          <button class="discussion-filter active" type="button" data-discussion-filter="faq">FAQs <span data-filter-count="faq">0</span></button>
+          <button class="discussion-filter" type="button" data-discussion-filter="recent">All Questions <span data-filter-count="recent">0</span></button>
+          <button class="discussion-filter" type="button" data-discussion-filter="unanswered">Unanswered <span data-filter-count="unanswered">0</span></button>
+        </div>
+        <div class="discussion-tags">
+          <a href="docs.html#creatingProject" target="_blank" rel="noopener">project setup</a>
+          <a href="docs.html#customDomain" target="_blank" rel="noopener">domain</a>
+          <a href="docs.html#navigateDocs" target="_blank" rel="noopener">navigation</a>
+          <a href="docs.html#apiExplorer" target="_blank" rel="noopener">api</a>
+          <a href="docs.html#searchTips" target="_blank" rel="noopener">search</a>
+          <a href="docs.html#changelog" target="_blank" rel="noopener">release notes</a>
+          <a href="docs.html#permissions" target="_blank" rel="noopener">account</a>
+          <a href="docs.html#collaboration" target="_blank" rel="noopener">support</a>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <div class="search-panel" id="searchPanel" aria-hidden="true">
+    <div class="search-dialog" role="dialog" aria-modal="true" aria-label="Quick Find">
+      <div class="dialog-head">
+        <strong>Quick Find</strong>
+        <button id="closeSearch" type="button" aria-label="Close search">Close</button>
+      </div>
+      <input id="dialogSearch" type="search" placeholder="Search docs, code, permissions, versions...">
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <div class="auth-panel" id="authPanel" aria-hidden="true">
+    <div class="auth-dialog" role="dialog" aria-modal="true" aria-label="Workspace account">
+      <div class="dialog-head">
+        <strong id="authTitle">Sign in</strong>
+        <button id="closeAuth" type="button" aria-label="Close account dialog">Close</button>
+      </div>
+      <div class="auth-tabs" role="tablist" aria-label="Account mode">
+        <button class="auth-tab active" type="button" data-auth-mode="login">Login</button>
+        <button class="auth-tab" type="button" data-auth-mode="signup">Sign up</button>
+      </div>
+      <form id="authForm" class="auth-form">
+        <label>
+          Name
+          <input id="nameInput" type="text" autocomplete="name" placeholder="Your name">
+        </label>
+        <label>
+          Email
+          <input id="emailInput" type="email" autocomplete="email" placeholder="you@example.com" required>
+        </label>
+        <label>
+          Password
+          <input id="passwordInput" type="password" autocomplete="current-password" placeholder="Minimum 6 characters" required>
+        </label>
+        <button id="authSubmit" type="submit">Login</button>
+        <p id="authMessage" class="auth-message" aria-live="polite"></p>
+      </form>
+      <div class="local-db-note">
+        <strong>Demo database</strong>
+        <p>Accounts are stored in this browser using localStorage so the project works without a backend server.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="question-panel" id="questionPanel" aria-hidden="true">
+    <div class="question-dialog" role="dialog" aria-modal="true" aria-labelledby="questionDialogTitle">
+      <div class="dialog-head">
+        <div>
+          <small>New discussion</small>
+          <strong id="questionDialogTitle">Ask a Question</strong>
+        </div>
+        <button id="closeQuestion" type="button" aria-label="Close question dialog">Close</button>
+      </div>
+      <form id="questionForm" class="question-form">
+        <label>
+          Question title
+          <input id="questionTitle" type="text" maxlength="120" placeholder="What do you need help with?" required>
+        </label>
+        <label>
+          Details
+          <textarea id="questionDetails" rows="6" maxlength="1200" placeholder="Add context, what you tried, or the result you expected." required></textarea>
+        </label>
+        <label>
+          Related topic
+          <select id="questionTopic">
+            <option value="discussions">General discussion</option>
+            <option value="creatingProject">Project setup</option>
+            <option value="navigateDocs">Navigation</option>
+            <option value="apiExplorer">API</option>
+            <option value="globalSearchDoc">Search</option>
+            <option value="recipes">Recipes</option>
+          </select>
+        </label>
+        <p>Your question will be added to Discussions as Unanswered until someone posts a reply.</p>
+        <button type="submit">Post Question</button>
+      </form>
+    </div>
+  </div>
+
+  <button class="to-top" id="toTop" type="button">Top</button>
+
+  <footer>
+    <strong>KnowledgeForge Documentation Hub</strong>
+    <p>Built as a functional documentation website project with organized pages, global search, code snippets, and version toggles.</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
